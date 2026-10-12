@@ -1,0 +1,1 @@
+import{t as e}from"./useQuery-BX1cKAcv.js";import{n as t}from"./active-backend-context-S3Ob58-k.js";import{n}from"./use-tracking-p2MgIf9H.js";var r=[`automation-health`];function i(){let i=t();return e({queryKey:[...r,i.backend.id,i.orgId],queryFn:()=>n.checkHealth(),staleTime:30*1e3,retry:!1})}export{i as t};

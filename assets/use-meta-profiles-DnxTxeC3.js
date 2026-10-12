@@ -1,0 +1,1 @@
+import{t as e}from"./useQuery-BX1cKAcv.js";import{P as t,V as n,n as r}from"./active-backend-context-S3Ob58-k.js";import{t as i}from"./meta-profiles-service.api-Pic7NnGX.js";function a(a={}){let{backend:o,orgId:s}=r();return e({queryKey:[...n.all,o.id,s],queryFn:i.listMetaProfiles,...t,enabled:a.enabled??!0,meta:{disableToast:!0}})}export{a as t};

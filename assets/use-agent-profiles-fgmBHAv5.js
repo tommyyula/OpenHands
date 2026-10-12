@@ -1,0 +1,1 @@
+import{t as e}from"./useQuery-BX1cKAcv.js";import{A as t,P as n,j as r,n as i}from"./active-backend-context-S3Ob58-k.js";import{t as a}from"./agent-profiles-service.api-VAIrQR9L.js";function o(o={}){let{backend:s,orgId:c}=i();return e({queryKey:[...t.all,s.id,c],queryFn:a.listProfiles,...n,...r,enabled:o.enabled??!0,meta:{disableToast:!0}})}export{o as t};
