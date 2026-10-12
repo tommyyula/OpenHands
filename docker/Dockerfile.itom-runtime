@@ -1,0 +1,7 @@
+# Repair missing static-server runtime modules in the upstream 1.27.0 image.
+# Build after npm ci with --build-context runtime_ws=./node_modules/ws.
+FROM ghcr.io/openhands/agent-canvas:1.27.0
+COPY --chown=openhands:openhands scripts/mars*.mjs scripts/tunnel*.mjs scripts/http-body.mjs /opt/agent-canvas/
+COPY --chown=openhands:openhands config/defaults.json /opt/config/defaults.json
+COPY --from=runtime_ws --chown=openhands:openhands / /opt/agent-canvas/node_modules/ws/
+RUN node --input-type=module -e "await import('/opt/agent-canvas/static-server.mjs')"
