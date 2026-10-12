@@ -307,7 +307,7 @@ export function OnboardingModal({
     // (the skip button or launching), never by an errant backdrop click or
     // Escape press — see https://github.com/OpenHands/agent-canvas/issues/1085.
     <ModalBackdrop aria-label={t(I18nKey.ONBOARDING$TITLE)}>
-      <div className="relative flex flex-col items-center gap-4">
+      <div className="relative flex flex-col items-center gap-4 max-sm:fixed max-sm:inset-3 max-sm:gap-2">
         <section
           data-testid="onboarding-modal"
           data-current-step={currentStep}
@@ -316,7 +316,7 @@ export function OnboardingModal({
             "flex flex-col gap-6 overflow-hidden rounded-2xl border border-contrast/10 bg-base-secondary shadow-2xl",
             modalWidthClassName("lg"),
             MODAL_MAX_WIDTH_VIEWPORT,
-            "max-h-[90vh]",
+            "max-h-[90vh] max-sm:min-h-0 max-sm:w-full max-sm:max-w-full max-sm:flex-1 max-sm:max-h-full",
           )}
         >
           <header className="flex flex-col gap-3 px-7 pt-7 shrink-0">
@@ -388,14 +388,14 @@ export function OnboardingModal({
             type="button"
             data-testid="onboarding-skip"
             onClick={handleSkipOrDismiss}
-            className="rounded-md px-3 py-2 text-sm text-muted transition-colors hover:bg-contrast/5 hover:text-contrast cursor-pointer"
+            className="shrink-0 rounded-md px-3 py-2 text-sm text-muted transition-colors hover:bg-contrast/5 hover:text-contrast cursor-pointer"
           >
             {t(I18nKey.ONBOARDING$SKIP)}
           </button>
         ) : null}
 
         {currentPhase === "hello" ? (
-          <label className="flex cursor-pointer items-center justify-center gap-2 text-sm text-muted">
+          <label className="flex shrink-0 cursor-pointer items-center justify-center gap-2 text-sm text-muted">
             <input
               data-testid="onboarding-skip-getting-started-checklist"
               type="checkbox"
